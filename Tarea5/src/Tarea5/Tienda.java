@@ -14,7 +14,7 @@ public class Tienda {
 
 	Scanner teclado = new Scanner(System.in);
 	ArrayList<DatosPersona> al1 = new ArrayList<DatosPersona>();
-	private String busqueda;
+	private int busqueda;
 
 	public void menuPrincipal() {
 
@@ -52,6 +52,7 @@ public class Tienda {
 
 	public void cliente() {
 		
+				
 		if (!buscar()) {
 			System.out.println("El cliente no existe debe digitarlo");
 			for (int i = 0; i < 1; i++) {
@@ -63,11 +64,14 @@ public class Tienda {
 	}
 
 	public boolean buscar() {
-		System.out.println("Digite el nombre del cliente");
-		setBusqueda(teclado.next());
+		System.out.println("Digite el numero de documento del cliente");
+		setBusqueda(teclado.nextInt());
 
 		int indice = al1.indexOf(getBusqueda());
+				
+		
 		if (indice != -1) {
+			System.out.println("El elemento SÍ existe en la lista");
 			return true;
 		} else {
 			return false;
@@ -82,12 +86,14 @@ public class Tienda {
 
 	}
 
-	public String getBusqueda() {
+	public int getBusqueda() {
 		return busqueda;
 	}
 
-	public void setBusqueda(String busqueda) {
+	public void setBusqueda(int busqueda) {
 		this.busqueda = busqueda;
 	}
+
+	
 
 }
