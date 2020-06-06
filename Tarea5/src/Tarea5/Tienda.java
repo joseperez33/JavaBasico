@@ -142,7 +142,7 @@ public class Tienda {
 					System.out.println("-----------------------------------------------------------------------");
 					System.out.println("- Identificación: " + dp.numeroIdentificacion);
 					System.out.println("- Cliente: " + dp.nombreCompleto);
-					System.out.println("COD--------PRODUCTO-----------VU------CANTIDAD-------------TOTAL----------");
+					System.out.println("COD--------PRODUCTO-----------VU------CANTIDAD-------------TOTAL-------");
 					for (int i = 0; i < al2.size(); i++) 
 					{
 						codidoProducto = al2.get(i).codigoProducto ;
