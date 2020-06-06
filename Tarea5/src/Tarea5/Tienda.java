@@ -39,6 +39,13 @@ public class Tienda {
 			if (p.getCodigoProducto() == codigo)
 				System.out.println(p.getCodigoProducto() + ": " + p + " Valor: " + p.getValorProducto());
 	}
+	
+	
+	public void valorUnitario(int codigo) {
+		for (Productos p : Productos.values())
+			if (p.getCodigoProducto() == codigo)
+				System.out.print("-------"+p.getValorProducto());
+	}
 
 	public void nombreProducto(int codigo) {
 		for (Productos p : Productos.values())
@@ -123,7 +130,7 @@ public class Tienda {
 					t.valorCantidad(codidoProducto, cantidad);
 
 					Venta rv = new Venta(dp.nombreCompleto, dp.numeroIdentificacion, codidoProducto, cantidad, valorParcial);
-					for (int i = 0; i < 4; i++) {
+					for (int i = 0; i < 1; i++) {
 						al2.add(contador, rv);
 					}
 					System.out.println("Presione 1 para finalizar la venta - 0 (cero) para continuar:");
@@ -132,22 +139,23 @@ public class Tienda {
 				}
 
 				if (opcionSalir == 0) {
-					System.out.println("--------------------------------------------------------");
+					System.out.println("-----------------------------------------------------------------------");
 					System.out.println("- Identificación: " + dp.numeroIdentificacion);
 					System.out.println("- Cliente: " + dp.nombreCompleto);
-					System.out.println("-PRODUCTO:-------CANTIDAD:---------------TOTAL:----------");
-					for (int i = 0; i < al1.size(); i++) 
+					System.out.println("COD--------PRODUCTO-----------VU------CANTIDAD-------------TOTAL----------");
+					for (int i = 0; i < al2.size(); i++) 
 					{
 						codidoProducto = al2.get(i).codigoProducto ;
 
-						   System.out.print(codidoProducto + "--------");
+						   System.out.print(codidoProducto + "----------");
 						   t.nombreProducto(codidoProducto);
-						   System.out.println( "--"+ al2.get(i).getCantidad() +"-------"+ al2.get(i).getTotal());
+						   t.valorUnitario(codidoProducto);
+						   System.out.println( "-------"+ al2.get(i).getCantidad() +"---------"+ al2.get(i).getTotal());
 						   valorTotal= valorTotal + al2.get(i).getTotal();
 						}
-					System.out.print("-TOTAL COMPRA:----------");
+					System.out.print("-TOTAL COMPRA:----------------------------------");
 					System.out.println("$"+valorTotal);
-					System.out.println("--------------------------------------------------------");
+					System.out.println("-----------------------------------------------------------------------");
 					System.out.println("");
 				}
 				contador = 0;
