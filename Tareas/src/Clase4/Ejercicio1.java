@@ -1,8 +1,8 @@
 package Clase4;
 
 /**
- * Crear una lista de nombres y edades en un tipo de lista generica.
- * Luego de almacenarla se debe ordenar de menor a mayor.
+ * Crear una lista de nombres y edades en un tipo de lista generica. Luego de
+ * almacenarla se debe ordenar de menor a mayor.
  * 
  * @author jose.perez
  * @since 06/06/2020
@@ -10,17 +10,18 @@ package Clase4;
  *
  */
 
-public class Ejericicio1 {
+public class Ejercicio1 {
 
 	class Nodo {
 		int info;
 		String nombre;
 		Nodo sig;
 	}
+	
 
 	private Nodo raiz;
 
-	public Ejericicio1() {
+	public Ejercicio1() {
 		raiz = null;
 	}
 
@@ -49,6 +50,8 @@ public class Ejericicio1 {
 			}
 		}
 	}
+	
+	
 
 	public int mayor() {
 		if (!vacia()) {
@@ -110,6 +113,8 @@ public class Ejericicio1 {
 		}
 	}
 
+	
+
 	public void ordenarMenor() {
 		int cant = 0;
 		Nodo reco = raiz;
@@ -119,21 +124,24 @@ public class Ejericicio1 {
 		}
 
 		for (int i = 0; i < cant; i++) {
-			int pos2 = i + 1;
-			Nodo reco1 = raiz;
-			for (int f = 1; f < i; f++)
-				reco1 = reco1.sig;
-			Nodo reco2 = raiz;
-			for (int f = 1; f < pos2; f++)
-				reco2 = reco2.sig;
+			for (int j = 0; j < cant; j++) {		
 
-			int aux = reco1.info;
-			int aux2 = reco2.info;
+				Nodo reco1 = raiz;
+				for (int f = 1; f < i; f++)
+					reco1 = reco1.sig;
+				Nodo reco2 = raiz;
+				for (int f = 1; f < j; f++)
+					reco2 = reco2.sig;
 
-			if (aux > aux2) {
-				intercambiar(i, pos2);
+				int aux = reco1.info;
+				int aux2 = reco2.info;
+
+
+				if (aux < aux2) {
+					intercambiar(i, j);
+				}
+				
 			}
-
 		}
 
 	}
@@ -180,15 +188,17 @@ public class Ejericicio1 {
 	}
 
 	public static void main(String[] args) {
-		Ejericicio1 lg = new Ejericicio1();
+		Ejercicio1 lg = new Ejercicio1();
 		lg.insertar(1, 100, "Maria");
 		lg.imprimir();
-		lg.insertar(2, 10, "Jose");
+		lg.insertar(2, 15, "Jose");
 		lg.imprimir();
-		lg.insertar(4, 60, "Jesus");
+		lg.insertar(3, 60, "Jesus");
 		lg.imprimir();
-		lg.insertar(3, 20, "Juan");
-		lg.imprimir();	
+		lg.insertar(4, 10, "Juan");
+		lg.imprimir();
+		lg.insertar(5, 200, "Joseph");
+		lg.imprimir();
 		lg.ordenarMenor();
 		lg.imprimir();
 
