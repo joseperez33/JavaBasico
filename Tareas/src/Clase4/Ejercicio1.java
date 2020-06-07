@@ -17,7 +17,6 @@ public class Ejercicio1 {
 		String nombre;
 		Nodo sig;
 	}
-	
 
 	private Nodo raiz;
 
@@ -50,41 +49,6 @@ public class Ejercicio1 {
 			}
 		}
 	}
-	
-	
-
-	public int mayor() {
-		if (!vacia()) {
-			int may = raiz.info;
-			Nodo reco = raiz.sig;
-			while (reco != null) {
-				if (reco.info > may)
-					may = reco.info;
-				reco = reco.sig;
-			}
-			return may;
-		} else
-			return Integer.MAX_VALUE;
-	}
-
-	public int posMayor() {
-		if (!vacia()) {
-			int may = raiz.info;
-			int x = 1;
-			int pos = x;
-			Nodo reco = raiz.sig;
-			while (reco != null) {
-				if (reco.info > may) {
-					may = reco.info;
-					pos = x;
-				}
-				reco = reco.sig;
-				x++;
-			}
-			return pos;
-		} else
-			return Integer.MAX_VALUE;
-	}
 
 	public int cantidad() {
 		int cant = 0;
@@ -113,8 +77,6 @@ public class Ejercicio1 {
 		}
 	}
 
-	
-
 	public void ordenarMenor() {
 		int cant = 0;
 		Nodo reco = raiz;
@@ -124,7 +86,7 @@ public class Ejercicio1 {
 		}
 
 		for (int i = 0; i < cant; i++) {
-			for (int j = 0; j < cant; j++) {		
+			for (int j = 0; j < cant; j++) {
 
 				Nodo reco1 = raiz;
 				for (int f = 1; f < i; f++)
@@ -136,39 +98,13 @@ public class Ejercicio1 {
 				int aux = reco1.info;
 				int aux2 = reco2.info;
 
-
 				if (aux < aux2) {
 					intercambiar(i, j);
 				}
-				
+
 			}
 		}
 
-	}
-
-	public boolean ordenada() {
-		if (cantidad() > 1) {
-			Nodo reco1 = raiz;
-			Nodo reco2 = raiz.sig;
-			while (reco2 != null) {
-				if (reco2.info < reco1.info) {
-					return false;
-				}
-				reco2 = reco2.sig;
-				reco1 = reco1.sig;
-			}
-		}
-		return true;
-	}
-
-	public boolean existe(int x) {
-		Nodo reco = raiz;
-		while (reco != null) {
-			if (reco.info == x)
-				return true;
-			reco = reco.sig;
-		}
-		return false;
 	}
 
 	public boolean vacia() {
