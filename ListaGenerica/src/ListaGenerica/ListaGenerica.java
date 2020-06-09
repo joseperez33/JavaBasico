@@ -170,7 +170,7 @@ public class ListaGenerica {
 		}
 		System.out.println();
 	}
-
+ 
 	public static void main(String[] args) {
 		ListaGenerica lg = new ListaGenerica();
 		lg.insertar(1, 10);
