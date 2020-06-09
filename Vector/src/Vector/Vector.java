@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * 
  * @author jose.perez
+ * @version 1
  *
  */
 
