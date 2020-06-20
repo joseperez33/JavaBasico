@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Ejericicio 3 Mostrar el nombre de un atleta y simular que corre 30 km. Para
  * simular el recorrido usar sleep(3500)
  * 
- * @author inder_yrvgjb9
+ * @author Jose.Perez
  *
  */
 

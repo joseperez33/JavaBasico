@@ -8,7 +8,7 @@ import java.util.Scanner;
  * la hora de ingreso es a las 8:00.
  * 
  * @author jose.perez
- * @since 20/06/2020
+ * @since 20/06/2020 
  * @version 1
  *
  */

@@ -5,7 +5,7 @@ package Clase10;
  * mili-segundos. Para usar este retardo usar la función sleep(1500) de java
  * 
  * @author jose.perez
- * @since 20/06/2020
+ * @since 20/06/2020 
  * @version 1
  *
  */
